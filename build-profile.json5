@@ -1,0 +1,49 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/xusu/.ohos/config/default_Shopping_GVNT4d-EYBc-r9SlfmyThSV3daC9q2eH_FYKKWL9Rr8=.cer",
+          "storePassword": "0000001A9B10628EC3732C9A3842BDBDD7B3A556FAC304F9B0FD0051A8C70C4E84211CA7E669ADA5838B",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001AB9D195F834E91324CAEBE50E76650FDE5F3CF2BF578089ACD75B59BB015FB197E53710D2132B",
+          "profile": "/Users/xusu/.ohos/config/default_Shopping_GVNT4d-EYBc-r9SlfmyThSV3daC9q2eH_FYKKWL9Rr8=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/xusu/.ohos/config/default_Shopping_GVNT4d-EYBc-r9SlfmyThSV3daC9q2eH_FYKKWL9Rr8=.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 9,
+    "compatibleSdkVersion": 9,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
