@@ -67,8 +67,8 @@ struct Login {
               return
             }
             promptAction.showToast({ message: '登录成功' });
-            // router.pushUrl({url:"pages/MainPage"})
-            router.replaceUrl({ url: "pages/MainPage" })
+            router.pushUrl({url:"pages/MainPage"})
+            // router.replaceUrl({ url: "pages/MainPage" })
           })
 
         Text('注册账号其他方式登录')

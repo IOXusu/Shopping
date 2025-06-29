@@ -1,3 +1,5 @@
+import router from '@ohos.router';
+
 @Entry
 @Component
 struct Main {
@@ -9,6 +11,12 @@ struct Main {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
+        Divider()
+        Button("返回")
+          .margin({ top: 20 })
+          .onClick(() => {
+            router.back()
+          })
       }
       .width('100%')
     }
