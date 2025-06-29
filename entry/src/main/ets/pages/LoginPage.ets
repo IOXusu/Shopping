@@ -1,5 +1,6 @@
 import hilog from '@ohos.hilog';
 import promptAction from '@ohos.promptAction';
+import router from '@ohos.router';
 
 @Entry
 @Component
@@ -66,6 +67,8 @@ struct Login {
               return
             }
             promptAction.showToast({ message: '登录成功' });
+            // router.pushUrl({url:"pages/MainPage"})
+            router.replaceUrl({ url: "pages/MainPage" })
           })
 
         Text('注册账号其他方式登录')
