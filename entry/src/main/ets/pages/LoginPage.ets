@@ -23,23 +23,15 @@ struct Login {
           .fontWeight(FontWeight.Medium)
         //用户名
         TextInput({ placeholder: "请输入用户名" })
-          .fontSize(18)
-          .width('100%')
-          .height(50)
-          .placeholderColor(0x999999)
+          .inputStyle()
           .maxLength(11)
-          .margin({ top: 20, left: 15, right: 15 })
           .onChange((value) => {
             this.name = value
           })
         //密码
         TextInput({ placeholder: "请输入密码" })
-          .fontSize(18)
-          .width('100%')
-          .height(50)
-          .placeholderColor(0x999999)
+          .inputStyle()
           .type(InputType.Password)
-          .margin({ top: 15, left: 15, right: 15 })
           .onChange((value) => {
             this.pwd = value
           })
@@ -77,24 +69,31 @@ struct Login {
           .fontColor('#296CF5')
 
         Row({ space: 20 }) {
-          Button('微信')
-            .fontSize(8)
-            .type(ButtonType.Circle)
-            .width(55)
-          Button('微博')
-            .type(ButtonType.Circle)
-            .fontSize(8)
-            .width(55)
-          Button('抖音')
-            .type(ButtonType.Circle)
-            .fontSize(8)
-            .width(55)
+          Button('微信').slButtonStyle()
+          Button('微博').slButtonStyle()
+          Button('抖音').slButtonStyle()
         }
         .width('100%')
         .margin({ top: 15 })
-        .justifyContent(FlexAlign.SpaceEvenly )
+        .justifyContent(FlexAlign.SpaceEvenly)
       }
       .width('100%')
-    }.margin({top:80})
+    }.margin({ top: 80 })
   }
+}
+
+@Extend(TextInput)
+function inputStyle() {
+  .fontSize(18)
+  .width('100%')
+  .height(50)
+  .placeholderColor(0x999999)
+  .margin({ top: 15, left: 15, right: 15 })
+}
+
+@Extend(Button)
+function slButtonStyle() {
+  .type(ButtonType.Circle)
+  .fontSize(8)
+  .width(55)
 }
