@@ -59,15 +59,15 @@ struct Login {
           .width('90%')
           .onClick(() => {
             if (this.name.length == 0) {
-              promptAction.showToast({ message: '请输入用户名，最长11位' });
+              promptAction.showToast({ message: '请输入用户名，最长11位', duration: 1000, });
               return
             }
             if (this.pwd.length == 0) {
-              promptAction.showToast({ message: '请输入密码' });
+              promptAction.showToast({ message: '请输入密码', duration: 1000 });
               return
             }
             promptAction.showToast({ message: '登录成功' });
-            router.pushUrl({url:"pages/MainPage"})
+            router.pushUrl({ url: "pages/MainPage" })
             // router.replaceUrl({ url: "pages/MainPage" })
           })
 
