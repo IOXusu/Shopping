@@ -7,6 +7,11 @@ struct Login {
   @State message: string = '欢迎登录';
   @State name: string = '';
   @State pwd: string = '';
+  private slDatas: Array<string> = [
+    "微信",
+    "微博",
+    "抖音",
+  ]
 
   build() {
     Row() {
@@ -69,9 +74,9 @@ struct Login {
           .fontColor('#296CF5')
 
         Row({ space: 20 }) {
-          Button('微信').slButtonStyle()
-          Button('微博').slButtonStyle()
-          Button('抖音').slButtonStyle()
+          ForEach(this.slDatas, (item) => {
+            Button(item).slButtonStyle()
+          })
         }
         .width('100%')
         .margin({ top: 15 })
