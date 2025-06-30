@@ -3,7 +3,7 @@
 export default struct MineUserComponent {
   build() {
     Row() {
-      Image($r('app.media.icon'))
+      Image($r('app.media.ic_head'))
         .width(35)
         .height(35)
         .margin({ left: 25 })

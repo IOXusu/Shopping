@@ -4,7 +4,7 @@ export default struct MineUserComponent {
   build() {
     Column() {
       Row() {
-        Image($r('app.media.icon'))
+        Image($r('app.media.ic_push_notifacation'))
           .width(25)
           .height(25)
           .borderRadius(17.5)
@@ -19,7 +19,7 @@ export default struct MineUserComponent {
       .alignItems(VerticalAlign.Center)
 
       Row() {
-        Image($r('app.media.icon'))
+        Image($r('app.media.ic_data_manager'))
           .width(25)
           .height(25)
           .borderRadius(17.5)
@@ -34,7 +34,7 @@ export default struct MineUserComponent {
       .alignItems(VerticalAlign.Center)
 
       Row() {
-        Image($r('app.media.icon'))
+        Image($r('app.media.ic_setting'))
           .width(25)
           .height(25)
           .borderRadius(17.5)
@@ -49,7 +49,7 @@ export default struct MineUserComponent {
       .alignItems(VerticalAlign.Center)
 
       Row() {
-        Image($r('app.media.icon'))
+        Image($r('app.media.ic_about'))
           .width(25)
           .height(25)
           .borderRadius(17.5)
@@ -64,7 +64,7 @@ export default struct MineUserComponent {
       .alignItems(VerticalAlign.Center)
 
       Row() {
-        Image($r('app.media.icon'))
+        Image($r('app.media.ic_clear'))
           .width(25)
           .height(25)
           .borderRadius(17.5)
@@ -79,7 +79,7 @@ export default struct MineUserComponent {
       .alignItems(VerticalAlign.Center)
 
       Row() {
-        Image($r('app.media.icon'))
+        Image($r('app.media.ic_privacy'))
           .width(25)
           .height(25)
           .borderRadius(17.5)
