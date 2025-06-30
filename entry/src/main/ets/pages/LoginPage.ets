@@ -1,6 +1,11 @@
 import hilog from '@ohos.hilog';
 import promptAction from '@ohos.promptAction';
 import router from '@ohos.router';
+import dataPreferences from '@ohos.data.preferences';
+import Preferences from '@ohos.data.preferences';
+
+let preferences: Preferences.Preferences = null;
+
 
 @Entry
 @Component
@@ -13,6 +18,22 @@ struct Login {
     "微博",
     "抖音",
   ]
+
+  aboutToAppear() {
+    let promise = dataPreferences.getPreferences(getContext(), 'mystore');
+    promise.then((object) => {
+      preferences = object;
+      preferences.get('isLogin', false, function (err, val) {
+        console.log("是否登录：" + val + err)
+        if (err) {
+          return;
+        }
+        if (val) {
+          router.replaceUrl({ url: "pages/MainPage" })
+        }
+      })
+    })
+  }
 
   build() {
     Row() {
@@ -67,8 +88,12 @@ struct Login {
               return
             }
             promptAction.showToast({ message: '登录成功' });
-            router.pushUrl({ url: "pages/MainPage" })
-            // router.replaceUrl({ url: "pages/MainPage" })
+
+            preferences.put("isLogin", true)
+            preferences.flush(() => {
+              router.pushUrl({ url: "pages/MainPage" })
+              // router.replaceUrl({ url: "pages/MainPage" })
+            })
           })
 
         Text('注册账号其他方式登录')

@@ -1,7 +1,9 @@
 import MineUserComponent from '../views/components/MineUserComponent'
 import MineConfigComponent from '../views/components/MineConfigComponent'
 import router from '@ohos.router';
+import dataPreferences from '@ohos.data.preferences';
 
+let preferences = null;
 
 @Preview
 @Component
@@ -24,8 +26,15 @@ export default struct Mine {
         .fontColor(Color.Red)
         .backgroundColor('#f1f2f5')
         .onClick(() => {
-          router.pushUrl({
-            url: 'pages/LoginPage'
+          let promise = dataPreferences.getPreferences(getContext(), 'mystore');
+          promise.then((object) => {
+            preferences = object;
+            preferences.put("isLogin", false)
+            preferences.flush(() => {
+              router.pushUrl({
+                url: 'pages/LoginPage'
+              })
+            })
           })
         })
     }
