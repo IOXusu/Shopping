@@ -21,6 +21,7 @@ export default struct Choice {
                 'Content-Type': 'application/json'
               },
             }, (err, data) => {
+            this.message = JSON.stringify(data)
             console.info('Result:' + JSON.stringify(data));
             hilog.info(0x0000, "TAG", JSON.stringify(data))
           })
