@@ -1,4 +1,5 @@
 import { ItemType } from '../mode/types'
+import promptAction from '@ohos.promptAction'
 
 @Preview
 @Component
@@ -50,6 +51,9 @@ export default struct MineConfigComponent {
               .layoutWeight(1)
               .fontSize(16)
             Toggle({ type: ToggleType.Switch, isOn: item.open })
+              .onChange((isOn) => {
+                promptAction.showToast({ message: isOn ? "已打开" : "已关闭" })
+              })
           }
           .width('100%')
           .height(50)
@@ -57,6 +61,7 @@ export default struct MineConfigComponent {
         }
       })
     }
+    .divider({ strokeWidth: 1, color: 'rgba(0,0,0,0.02)' })
     .width('100%')
     .margin({ left: 20, top: 20, right: 20 })
     .padding({ left: 20, top: 10, right: 20, bottom: 10 })
