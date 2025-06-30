@@ -58,6 +58,6 @@ struct Main {
         this.currentIndex = index
       })
     }
-    .height('100%')
+    .margin({ top: 35 })
   }
 }
