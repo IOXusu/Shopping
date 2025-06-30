@@ -14,6 +14,6 @@ export default struct Home {
         NavComponent()
         ListComponent()
       }.width('100%')
-    }.scrollBar(BarState.On)
+    }.scrollBar(BarState.Auto)
   }
 }
