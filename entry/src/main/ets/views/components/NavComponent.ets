@@ -62,9 +62,18 @@ export default struct NavComponent {
       .height(120)
       .margin(10)
       .padding(10)
-      .shadow({ radius: 20, color: Color.Grey, offsetX: 3, offsetY: 3 })
       .backgroundColor(Color.White)
-      .borderRadius(20)
+      .borderRadius(25)
+      .shadow({
+        radius: 4,
+        color: 'rgba(0,0,0,0.02)',
+        offsetY: 1
+      })
+      .shadow({
+        radius: 20,
+        color: 'rgba(0,0,0,0.08)',
+        offsetY: 2
+      })
     }
   }
 }

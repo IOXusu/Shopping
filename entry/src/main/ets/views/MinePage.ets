@@ -1,13 +1,21 @@
+import MineUserComponent from '../views/components/MineUserComponent'
+import MineConfigComponent from '../views/components/MineConfigComponent'
+
+@Preview
 @Component
 export default struct Mine {
   @State message: string = '我的';
 
   build() {
     Column() {
-      Text(this.message)
+      Text('我的')
+        .fontSize(20)
+        .fontWeight(FontWeight.Medium)
+        .alignSelf(ItemAlign.Start)
+      MineUserComponent()
+      MineConfigComponent()
     }
-    .alignItems(HorizontalAlign.Center)
-    .justifyContent(FlexAlign.Center)
+    .padding({ left: 15, top: 10, right: 15 })
     .width('100%')
     .height('100%')
   }
