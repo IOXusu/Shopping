@@ -1,6 +1,7 @@
 @Preview
 @Component
-export default struct MineUserComponent {
+export default struct MineConfigComponent {
+
   build() {
     Column() {
       Row() {
