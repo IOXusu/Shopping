@@ -24,7 +24,6 @@ struct Login {
     promise.then((object) => {
       preferences = object;
       preferences.get('isLogin', false, function (err, val) {
-        console.log("是否登录：" + val + err)
         if (err) {
           return;
         }
